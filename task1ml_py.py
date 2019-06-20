@@ -8,13 +8,18 @@ Original file is located at
 """
 
 import numpy as np
-import random
-import csv
+# take input dimension of 2d array
 m=int(input("Enter no. of rows : "))
 n=int(input("Enter no. of column : "))
-p=np.random.random((m,n))
-p
+# input random number b/w 0 , 100 
+p=np.random.randint(100,high=None,size=(m,n))
+
+# Store array in a csv file named new_file.csv
 with open("new_file.csv","w+") as my_csv:
     csvWriter = csv.writer(my_csv,delimiter=',')
     csvWriter.writerows(p)
+
+import pandas as pd
+
+pd.read_csv('new_file.csv')
 
